@@ -7,10 +7,10 @@
 
     </data>
 
+    <!-- to position floating action button easily by design panel not coding-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         tools:context=".screens.shoe_listing.ShoeListingFragment">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton

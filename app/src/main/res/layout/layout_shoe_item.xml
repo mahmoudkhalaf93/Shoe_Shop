@@ -16,26 +16,27 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         app:cardCornerRadius="12dp">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <!-- i used the linearlayout because i don't have so much details here to positions
+              views just vertical and center them -->
+        <LinearLayout
             android:id="@+id/constraint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="24dp"
-            >
+            android:orientation="vertical"
+            android:padding="24dp">
 
             <TextView
                 android:id="@+id/name"
+                style="@style/item_shoe_text"
                 android:text="@{`name : `.concat(shoeItem.name)}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="sport shoe"
-                style="@style/item_shoe_text" />
+                tools:text="sport shoe" />
 
             <TextView
                 android:id="@+id/size"
-                android:text="@{`size : `.concat(Double.toString(shoeItem.size))}"
                 style="@style/item_shoe_text"
+                android:text="@{`size : `.concat(Double.toString(shoeItem.size))}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/name"
                 tools:text="size : 45.5" />
@@ -43,8 +44,8 @@
             <TextView
                 android:id="@+id/company"
 
-                android:text="@{`company : `.concat(shoeItem.company)}"
                 style="@style/item_shoe_text"
+                android:text="@{`company : `.concat(shoeItem.company)}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/size"
                 tools:text="company : Nike" />
@@ -52,12 +53,12 @@
             <TextView
                 android:id="@+id/description"
 
-                android:text="@{`description : `.concat(shoeItem.description)}"
                 style="@style/item_shoe_text"
+                android:text="@{`description : `.concat(shoeItem.description)}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/company"
                 tools:text="description : for running and football match very fast" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 </layout>

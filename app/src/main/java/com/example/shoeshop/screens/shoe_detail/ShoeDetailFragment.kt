@@ -10,7 +10,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.shoeshop.R
 import com.example.shoeshop.databinding.FragmentShoeDetailBinding
-import com.example.shoeshop.models.Shoe
+
 import com.example.shoeshop.screens.shoe_listing.ShoeListingViewModel
 
 class ShoeDetailFragment : Fragment() {
@@ -29,6 +29,7 @@ class ShoeDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.model =viewModel
         //save button
         binding.save.setOnClickListener {
             //check if fields is empty just don't do any thing and return
@@ -40,16 +41,9 @@ class ShoeDetailFragment : Fragment() {
                 return@setOnClickListener
             //if fields is not empty just parse the string value to double
             try {
-                val size = binding.shoeSizeText.text.toString().toDouble()
+
                 //add new item to listItem view model
-                viewModel.updateList(
-                    Shoe(
-                        binding.nameText.text.toString(),
-                        size,
-                        binding.companyText.text.toString(),
-                        binding.descriptionText.text.toString()
-                    )
-                )
+                viewModel.updateList()
                 //then navigate back
                 this.findNavController().navigateUp()
             } catch (e: Exception) {

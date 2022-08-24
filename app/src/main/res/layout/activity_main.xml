@@ -7,7 +7,8 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <!--i use linearlayout because i don't have any details here-->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
@@ -18,15 +19,13 @@
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            tools:context=".MainActivity"
             app:defaultNavHost="true"
             app:navGraph="@navigation/main"
             tools:layout_editor_absoluteX="1dp"
             tools:layout_editor_absoluteY="1dp" />
 
-<!--        <com.google.android.material.navigation.NavigationView-->
-<!--            android:layout_width="188dp"-->
-<!--            android:layout_height="8dp"-->
-<!--            tools:layout_editor_absoluteX="1dp"-->
-<!--            tools:layout_editor_absoluteY="339dp" />-->
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
 </layout>

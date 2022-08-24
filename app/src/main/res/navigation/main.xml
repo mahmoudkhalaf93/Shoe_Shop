@@ -16,7 +16,7 @@
             app:popEnterAnim="@anim/fade_in"
             app:popExitAnim="@anim/fade_out"
             app:popUpTo="@id/loginFragment"
-            app:popUpToInclusive="false" />
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/welcomeFragment"
@@ -24,11 +24,13 @@
         android:label="Welcome">
         <action
             android:id="@+id/action_welcomeFragment_to_instructionsFragment"
+            app:destination="@id/instructionsFragment"
             app:enterAnim="@anim/fade_in"
             app:exitAnim="@anim/fade_out"
             app:popEnterAnim="@anim/fade_in"
             app:popExitAnim="@anim/fade_out"
-            app:destination="@id/instructionsFragment" />
+            app:popUpTo="@id/welcomeFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/instructionsFragment"
@@ -36,11 +38,13 @@
         android:label="Instructions">
         <action
             android:id="@+id/action_instructionsFragment_to_shoeListingFragment"
+            app:destination="@id/shoeListingFragment"
             app:enterAnim="@anim/fade_in"
             app:exitAnim="@anim/fade_out"
             app:popEnterAnim="@anim/fade_in"
             app:popExitAnim="@anim/fade_out"
-            app:destination="@id/shoeListingFragment" />
+            app:popUpTo="@id/instructionsFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/shoeListingFragment"
@@ -56,11 +60,11 @@
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_shoeListingFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
             app:enterAnim="@anim/fade_in"
             app:exitAnim="@anim/fade_out"
             app:popEnterAnim="@anim/fade_in"
             app:popExitAnim="@anim/fade_out"
-            app:destination="@id/loginFragment"
             app:popUpTo="@id/shoeListingFragment"
             app:popUpToInclusive="true" />
         <argument
